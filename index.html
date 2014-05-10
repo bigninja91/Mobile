@@ -38,10 +38,11 @@
 	
 	
 		<!-- Load the BBC News feed from a yahoo pipe -->
+		alert("test");
 		document.addEventListener('deviceready', onDeviceReady, false);
 		function onDeviceReady() {
 		var xmlhttp=new XMLHttpRequest();
-		xmlhttp.open("GET","http://pipes.yahoo.com/pipes/pipe.run?_id=102434ed47e9ac8d07470be661f3d5a7&_render=json",false);
+		xmlhttp.open("GET","http://pipes.yahoo.com/pipes/pipe.run?_id=102434ed47e9ac8d07470be661f3d5a7&_render=json",true);
 		xmlhttp.send();
 		
 		
