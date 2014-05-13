@@ -25,7 +25,7 @@
 
 		function initialize() {
 
-			var feed = new google.feeds.Feed("https://news.google.com/news/feeds?pz=1&cf=all&ned=uk&hl=en&csid=" + newsTopic + "&output=rss");
+			var feed = new google.feeds.Feed("http://fightland.vice.com/rss");
 			
 
 			feed.setResultFormat(google.feeds.Feed.JSON_FORMAT);
@@ -127,6 +127,7 @@
 					newsTopic =  urlParam("topic", data.toPage);
 
 					e.preventDefault();
+					
 
 					$.mobile.loading("show");
 
@@ -182,9 +183,9 @@
 
 					<ul>
 
-						<li><a href="#feeds?topic=w" class="ui-btn-active ui-state-persist">World</a></li>
+						<li><a href="#feeds?topic" class="ui-btn-active ui-state-persist">World</a></li>
 
-						<li><a href="#feeds?topic=fe5cd04b62dfa8cd">Health</a></li>
+						<li><a href="#feeds?topic">Health</a></li>
 
 						<li><a href="#feeds?topic=s">Sports</a></li>
 
