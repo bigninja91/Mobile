@@ -20,9 +20,10 @@
 	<ul data-role="listview" class="ui-listview-outer" data-inset="true">
   <li data-role="collapsible" data-iconpos="right" data-shadow="false" data-corners="false">
 <h2>Combat</h2>
-    <ul data-role="page" data-theme="b">
+    <ul data-role="listview" data-theme="b">
 			{{#combat}}
-			<li><a href="{{link}}"> {{title}} </a>{{{description}}} <img src={{enclosure.url}}></img>  </li>
+			
+			<li><a href="{{link}}"> {{title}} </a></li> <li>{{{description}}} <img src={{enclosure.url}}></img>  </li>
 			{{/combat}}
 			
 		</ul>
