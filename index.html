@@ -52,29 +52,33 @@
 		<!-- Load the BBC News feed from a yahoo pipe -->
 		
 		document.addEventListener('deviceready', onDeviceReady, false);
+		
+		
 		function onDeviceReady() {
-		var xmlhttp=new XMLHttpRequest();
-		xmlhttp.open("GET","http://pipes.yahoo.com/pipes/pipe.run?_id=102434ed47e9ac8d07470be661f3d5a7&_render=json",false);
-		xmlhttp.send();
-		
-		
-		<!-- parse the resulting JSON into Javascript Data Object -->
-		<!-- you can use a live parser to inspect the contents of the JSON
-		<!-- http://json.parser.online.fr/ -->
-		var feed= JSON.parse(xmlhttp.responseText);
+			
+			alert("Device Ready");
+			
+			var xmlhttp=new XMLHttpRequest();
+			xmlhttp.open("GET","http://pipes.yahoo.com/pipes/pipe.run?_id=102434ed47e9ac8d07470be661f3d5a7&_render=json",false);
+			xmlhttp.send();
+	
+			<!-- parse the resulting JSON into Javascript Data Object -->
+			<!-- you can use a live parser to inspect the contents of the JSON
+			<!-- http://json.parser.online.fr/ -->
+			var feed= JSON.parse(xmlhttp.responseText);
 	
 	
-		<!-- Define Ractive binding -->
-		var ractive = new Ractive({
-            el: 'container', <!-- where -->
-            template: '#myTemplate', <!-- how -->
-            data: { combat:feed.value.items }
-			 <!-- what - specify the list of news articles 'items' using dot notation-->
-        });
+			<!-- Define Ractive binding -->
+			var ractive = new Ractive({
+				el: 'container', <!-- where -->
+				template: '#myTemplate', <!-- how -->
+				data: { combat:feed.value.items }
+				 <!-- what - specify the list of news articles 'items' using dot notation-->
+			});
 		}
 		
     </script></div>
-  <div data-role="footer">
+  <div data-role="footer" data-position="fixed">
     <h4>Footer</h4>
   </div>
 </div>
