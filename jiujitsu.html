@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,7 +27,7 @@
 
 		function initialize() {
 
-			var feed = new google.feeds.Feed("http://fightland.vice.com/rss");
+			var feed = new google.feeds.Feed("http://www.graciemag.com/feed/");
 			
 
 			feed.setResultFormat(google.feeds.Feed.JSON_FORMAT);
@@ -174,40 +173,20 @@
 
 			<div data-role="header">
 
-				<h1>Combat News </h1>
+				<h1> Jiu Jitsu </h1>
 
 			</div>
 
 			<div data-role="content" id="newsList">
 
 			</div>
-
-			<div data-role="footer" data-id="foo1" data-position="fixed">
+            <div data-role="footer" data-id="foo1" data-position="fixed">
 
 				<div data-role="navbar">
 
 					<ul>
+						<li><a href="index.html">Home</a></li>
 
-						<li><a href="#feeds?topic" class="ui-btn-active ui-state-persist">MMA</a></li>
-
-						<li><a href="boxing.html">Boxing</a></li>
-
-						<li><a href="judo.html">Judo</a></li>
-
-						<li><a href="jiujitsu.html">Jiu Jitsu</a></li>
-
-					</ul>
+						</ul>
 
 				</div>
-
-				<!-- /navbar -->
-
-			</div>
-
-			<!-- /footer -->
-
-		</div>
-
-	</body> 
-
-</html>
