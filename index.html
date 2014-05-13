@@ -61,6 +61,15 @@
 			
 			var xmlhttp=new XMLHttpRequest();
 			xmlhttp.open("GET","http://pipes.yahoo.com/pipes/pipe.run?_id=102434ed47e9ac8d07470be661f3d5a7&_render=json",true);
+			
+			xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+   alert(xmlhttp.responseText)
+    }
+  }
+			
 			xmlhttp.send();
 	
 			<!-- parse the resulting JSON into Javascript Data Object -->
