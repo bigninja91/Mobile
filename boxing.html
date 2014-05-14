@@ -21,7 +21,7 @@
 <script type="text/javascript">
 
 
-
+<!-- Following JavaScript taken from http://johnchacko.net/ This converts feeds into items which are displayed in the form of Jquery Mobile items.-->
 
 	(function () {
 
@@ -48,7 +48,7 @@
 					Result = result;
 
 				<!-- Altered to allow search filtering, data-theme set to the color blue -->
-					var output = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-theme="b">';
+					var output = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Search Articles" data-inset="true" data-theme="b">';
 
 					var container = document.getElementById("feed");
 
@@ -166,7 +166,7 @@
 	})();
 	
 	
-	<!-- Following JavaScript is to allow searches to be made that return results with search terms found within the body of the text -->
+	<!-- Following JavaScript is to allow searches to be made that return results with search terms found within the body of the text. By Kris Hadlock-->
 	$(document).ready(function() {
     $('div#newsList').on({ 
         pageinit: function(event) {
