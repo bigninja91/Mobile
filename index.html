@@ -4,9 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head> 
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    <link rel="stylesheet" href="style.css" />
     
     
 
@@ -17,6 +18,8 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 <script type="text/javascript">
+
+
 
 
 
@@ -44,8 +47,8 @@
 				if (!result.error) {
 
 					Result = result;
-			<!-- Altered to allow search filtering -->
-					var output = '<ul id="custom-format-listview" data-role="listview" data-filter="true">';
+			<!-- Altered to allow search filtering, data-theme set to the color blue -->
+					var output = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-theme="b">';
 
 					var container = document.getElementById("feed");
 
@@ -209,11 +212,11 @@ String.prototype.trim = function() {
 			<!-- ADD rel="external" to ensure page links function -->
 						<li><a href="#feeds?topic" class="ui-btn-active ui-state-persist">MMA</a></li>
 
-						<li><a href="boxing.html" rel="external">Boxing</a></li>
+						<li><a href="boxing.html" data-transition="flow" rel="external">Boxing</a></li>
 
 						
 
-						<li><a href="jiujitsu.html" rel="external">Jiu Jitsu</a></li>
+						<li><a href="jiujitsu.html" data-transition="flow" rel="external">Jiu Jitsu</a></li>
 
 					</ul>
 
