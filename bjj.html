@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+
+<meta charset="UTF-8">
 
 <head> 
 
@@ -168,22 +170,35 @@
 	
 	
 	<!-- Following JavaScript is to allow searches to be made that return results with search terms found within the body of the text. By Kris Hadlock-->
+	
 	$(document).ready(function() {
-    $('div#newsList').on({ 
-        pageinit: function(event) {
-            $('#custom-format-listview').listview('option', 'filterCallback', onlyBody);
-        }
-    });
+    
+	$('div#newsList').on({ 
+    
+	    pageinit: function(event) {
+    
+	        $('#custom-format-listview').listview('option', 'filterCallback', onlyBody);
+    
+	    }
+    
+	});
+
 });
 
 
-function onlyBody( text, searchValue ) {
-    var splitText = text.trim().split("\n");
-    //console.log("text: "+ splitText[1]);
-    return splitText[1].toLowerCase().indexOf( searchValue ) === -1;
-}
+	function onlyBody( text, searchValue ) {
+    
+	var splitText = text.trim().split("\n");
+    
+	//console.log("text: "+ splitText[1]);
+    
+	return splitText[1].toLowerCase().indexOf( searchValue ) === -1;
+
+	}
+
 String.prototype.trim = function() {
     return this.replace(/^\s+|\s+$/g,"");
+
 }
 	
 
@@ -223,8 +238,10 @@ String.prototype.trim = function() {
     <!-- ADD rel="external" to ensure page links function fade transitions have been incorporated for visual appeal -->
 					<ul>
 						<li><a href="index.html" data-transition="fade" rel="external">Home</a></li>
-                        <li><a href="kickboxing.html" data-transition="fade" rel="external">Boxing</a></li>
+                        <li><a href="kickboxing.html" data-transition="fade" rel="external">Kickboxing</a></li>
 
 						</ul>
 
 				</div>
+        
+</html>
