@@ -17,6 +17,7 @@
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
+
 <script type="text/javascript">
 
 
@@ -165,29 +166,49 @@
 
 	})();
 	
+	
 	<!-- Following JavaScript is to allow searches to be made that return results with search terms found within the body of the text. By Kris Hadlock-->
 	$(document).ready(function() {
-    $('div#newsList').on({ 
-        pageinit: function(event) {
-            $('#custom-format-listview').listview('option', 'filterCallback', onlyBody);
-        }
-    });
+    
+	$('div#newsList').on({ 
+        
+		pageinit: function(event) {
+            
+			$('#custom-format-listview').listview('option', 'filterCallback', onlyBody);
+        
+		}
+    
+	});
+
 });
 
 
-function onlyBody( text, searchValue ) {
-    var splitText = text.trim().split("\n");
-    //console.log("text: "+ splitText[1]);
-    return splitText[1].toLowerCase().indexOf( searchValue ) === -1;
+		function onlyBody( text, searchValue ) {
+    
+		var splitText = text.trim().split("\n");
+    
+	//console.log("text: "+ splitText[1]);
+    
+		return splitText[1].toLowerCase().indexOf( searchValue ) === -1;
+		}
+
+		String.prototype.trim = function() {
+    	return this.replace(/^\s+|\s+$/g,"");
+
 }
-String.prototype.trim = function() {
-    return this.replace(/^\s+|\s+$/g,"");
-}
+
 
 </script>
 
 
   </head>
+	<!--Style to make images responsive -->
+<style>
+    img.fullscreen {
+        max-height: 100%;
+        max-width: 100%;
+    }       
+</style>
 
 	<body>
 
@@ -207,11 +228,12 @@ String.prototype.trim = function() {
 
 				<div data-role="navbar" >
 
-					<ul>
-			<!-- ADD rel="external" to ensure page links function -->
+					
+                    <ul>
+			<!-- ADD rel="external" to ensure page links function fade transitions have been incorporated for visual appeal -->
 						<li><a href="#feeds?topic"  class="ui-btn-active ui-state-persist">MMA</a> </li>
 
-						<li><a href="boxing.html"  data-transition="fade" rel="external">Boxing</a></li>
+						<li><a href="kickboxing.html"  data-transition="fade" rel="external">Kickboxing</a></li>
 
 						
 

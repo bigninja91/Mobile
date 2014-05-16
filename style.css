@@ -1,5 +1,7 @@
-@charset "UTF-8";
-/* CSS Document */
-
+<!-- Style to make images responsive -->
+img.fullscreen {
+        max-height: 100%;
+        max-width: 100%;
+    } 
 
 

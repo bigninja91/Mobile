@@ -1,13 +1,14 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head> 
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    
+    <link rel="stylesheet" href="style.css" />
 
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> 
 
@@ -17,6 +18,8 @@
 
 <script type="text/javascript">
 
+
+<!-- Following JavaScript taken from http://johnchacko.net/ This converts feeds into items which are displayed in the form of Jquery Mobile items.-->
 
 
 
@@ -29,7 +32,7 @@
 
 		function initialize() {
 
-			var feed = new google.feeds.Feed("http://www1.skysports.com/feeds/12183/news.xml");
+			var feed = new google.feeds.Feed("http://www.graciemag.com/feed/");
 			
 
 			feed.setResultFormat(google.feeds.Feed.JSON_FORMAT);
@@ -44,7 +47,9 @@
 
 					Result = result;
 
-					var output = '<ul data-role="listview" xdata-filter="true">';
+				<!-- Altered to allow search filtering, data-theme set to the color blue -->
+
+					var output = '<ul id="custom-format-listview" data-role="listview" data-filter="true" data-filter-placeholder="Search Articles" data-theme="b">';
 
 					var container = document.getElementById("feed");
 
@@ -162,20 +167,48 @@
 	})();
 	
 	
+	<!-- Following JavaScript is to allow searches to be made that return results with search terms found within the body of the text. By Kris Hadlock-->
+	$(document).ready(function() {
+    $('div#newsList').on({ 
+        pageinit: function(event) {
+            $('#custom-format-listview').listview('option', 'filterCallback', onlyBody);
+        }
+    });
+});
+
+
+function onlyBody( text, searchValue ) {
+    var splitText = text.trim().split("\n");
+    //console.log("text: "+ splitText[1]);
+    return splitText[1].toLowerCase().indexOf( searchValue ) === -1;
+}
+String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g,"");
+}
+	
 
 </script>
 
 
 
   </head>
+	
+    <!--Style to make images responsive -->
+<style>
+    img.fullscreen {
+        max-height: 100%;
+        max-width: 100%;
+    }       
+</style>
 
-	<body>
+	
+    <body>
 
 		<div data-role="page" id="combatNews">
 
 			<div data-role="header">
 
-				<h1> Judo </h1>
+				<h1> BJJ </h1>
 
 			</div>
 
@@ -185,9 +218,12 @@
             <div data-role="footer" data-id="foo1" data-position="fixed">
 
 				<div data-role="navbar">
-			<!-- ADD rel="external" to ensure page links function -->
+	
+    
+    <!-- ADD rel="external" to ensure page links function fade transitions have been incorporated for visual appeal -->
 					<ul>
-						<li><a href="index.html" rel="external">Home</a></li>
+						<li><a href="index.html" data-transition="fade" rel="external">Home</a></li>
+                        <li><a href="kickboxing.html" data-transition="fade" rel="external">Boxing</a></li>
 
 						</ul>
 
